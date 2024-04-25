@@ -36,6 +36,7 @@ export default function WordDefinitionPage(): ReactElement {
 
   function RefreshSearch(): void {
     setSearchedWord("");
+    setIsError(false);
     setWordDefinition({ ...EmptyWordDefinition });
   }
 

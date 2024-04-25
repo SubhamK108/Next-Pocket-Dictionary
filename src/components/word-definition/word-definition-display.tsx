@@ -49,7 +49,7 @@ export default function WordDefinitionDisplay({ WordDefinition, RefreshSearch }:
           </div>
         </div>
       </div>
-      <div className="mb-14 max-sm:mb-10 w-2/5 mx-auto max-sm:w-auto max-sm:mx-6 flex flex-col justify-start items-start text-left gap-5 max-sm:gap-4">
+      <div className="mb-14 max-sm:mb-10 w-2/5 mx-auto max-sm:w-[22rem] flex flex-col justify-start items-start text-left gap-5 max-sm:gap-4">
         {WordDefinition.meanings.map((meaning: Meaning, index: number) => (
           <div key={index} className="bg-zinc-300 dark:bg-zinc-800 p-5 max-sm:p-3 rounded-3xl shadow-xl">
             <p className="text-[1.8rem] max-sm:text-[1.2rem] font-bold drop-shadow-lg dark:drop-shadow-2xl">
