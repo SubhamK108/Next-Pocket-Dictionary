@@ -5,10 +5,15 @@ import { delay } from "@/lib/utils";
 
 interface WordDefinitionDisplayProps {
   WordDefinition: WordDefinition;
+  SearchWord: (word: string) => void;
   RefreshSearch: () => void;
 }
 
-export default function WordDefinitionDisplay({ WordDefinition, RefreshSearch }: WordDefinitionDisplayProps): ReactElement {
+export default function WordDefinitionDisplay({
+  WordDefinition,
+  SearchWord,
+  RefreshSearch
+}: WordDefinitionDisplayProps): ReactElement {
   async function playAudio(audioUrl: string, index: number, element: HTMLDivElement): Promise<void> {
     const originalElementStyles: string = element.className;
     element.className = `${originalElementStyles} animate-bounce`;
@@ -49,7 +54,7 @@ export default function WordDefinitionDisplay({ WordDefinition, RefreshSearch }:
           </div>
         </div>
       </div>
-      <div className="mb-14 max-sm:mb-10 w-2/5 mx-auto max-sm:w-[22rem] flex flex-col justify-start items-start text-left gap-5 max-sm:gap-4">
+      <div className="mb-10 max-sm:mb-10 w-2/5 mx-auto max-sm:w-[22rem] flex flex-col justify-start items-start text-left gap-5 max-sm:gap-4">
         {WordDefinition.meanings.map((meaning: Meaning, index: number) => (
           <div key={index} className="bg-zinc-300 dark:bg-zinc-800 p-5 max-sm:p-3 rounded-3xl shadow-xl">
             <p className="text-[1.8rem] max-sm:text-[1.2rem] font-bold drop-shadow-lg dark:drop-shadow-2xl">
@@ -67,10 +72,34 @@ export default function WordDefinitionDisplay({ WordDefinition, RefreshSearch }:
               {(meaning.synonyms.length !== 0 || meaning.antonyms.length !== 0) && (
                 <div className="ml-1 mt-5 max-sm:mt-3">
                   {meaning.synonyms.length !== 0 && (
-                    <p className="text-[1.4rem] max-sm:text-[1.05rem]">{`Similar: ${meaning.synonyms.join(", ")}`}</p>
+                    <p className="text-[1.4rem] max-sm:text-[1.05rem] flex justify-start items-center gap-2 flex-wrap">
+                      {`Similar:`}
+                      {meaning.synonyms.map((synonym: string, index3: number) => (
+                        <span
+                          key={index3}
+                          className="rounded-full pb-1 max-sm:pb-[0.15rem] px-3 max-sm:px-2 cursor-pointer bg-zinc-200 dark:bg-zinc-700 hover:bg-slate-300 dark:hover:bg-slate-700 shadow-xl"
+                          title={`Search '${synonym}'`}
+                          onClick={() => SearchWord(synonym)}
+                        >
+                          {synonym}
+                        </span>
+                      ))}
+                    </p>
                   )}
                   {meaning.antonyms.length !== 0 && (
-                    <p className="text-[1.4rem] max-sm:text-[1.05rem]">{`Opposite: ${meaning.antonyms.join(", ")}`}</p>
+                    <p className="text-[1.4rem] max-sm:text-[1.05rem] flex justify-start items-center gap-2 flex-wrap">
+                      {`Opposite: `}
+                      {meaning.antonyms.map((antonym: string, index3: number) => (
+                        <span
+                          key={index3}
+                          className="rounded-full pb-1 max-sm:pb-[0.15rem] px-3 max-sm:px-2 cursor-pointer bg-zinc-200 dark:bg-zinc-700 hover:bg-slate-300 dark:hover:bg-slate-700 shadow-xl"
+                          title={`Search '${antonym}'`}
+                          onClick={() => SearchWord(antonym)}
+                        >
+                          {antonym}
+                        </span>
+                      ))}
+                    </p>
                   )}
                 </div>
               )}

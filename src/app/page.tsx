@@ -15,12 +15,13 @@ export default function WordDefinitionPage(): ReactElement {
   const [isError, setIsError] = useState<boolean>(false);
   const [errorText, setErrorText] = useState<string>("");
 
-  async function getWordDefinition(): Promise<void> {
+  async function getWordDefinition(word: string): Promise<void> {
     setLoading(true);
-    const data: WordDefinition = await fetchWordDefinition(searchedWord.toLowerCase());
+    const data: WordDefinition = await fetchWordDefinition(word);
     if (data.word !== "") {
       setWordDefinition(data);
     } else {
+      setWordDefinition({ ...EmptyWordDefinition });
       setSearchedWord("");
       setErrorText(
         `Either '${searchedWord}' isn't there in this dictionary or there's a technical problem. You can try again or use the internet for this word.`
@@ -34,9 +35,12 @@ export default function WordDefinitionPage(): ReactElement {
     setIsError(false);
   }
 
+  function searchSpecificWord(word: string): void {
+    getWordDefinition(word.toLowerCase());
+  }
+
   function RefreshSearch(): void {
     setSearchedWord("");
-    setIsError(false);
     setWordDefinition({ ...EmptyWordDefinition });
   }
 
@@ -54,7 +58,7 @@ export default function WordDefinitionPage(): ReactElement {
           onInput={(e) => setSearchedWord(e.currentTarget.value)}
           onKeyDown={(e) => {
             if (e.code === "Enter" && searchedWord !== "") {
-              getWordDefinition();
+              getWordDefinition(searchedWord.toLowerCase());
             }
           }}
           placeholder="Enter a word..."
@@ -62,7 +66,7 @@ export default function WordDefinitionPage(): ReactElement {
         <button
           className="mt-10 max-sm:mt-6 cursor-pointer disabled:cursor-default hover:text-[#26272A] dark:hover:text-white disabled:text-zinc-500 dark:disabled:text-zinc-600"
           title="Search Word"
-          onClick={getWordDefinition}
+          onClick={() => getWordDefinition(searchedWord.toLowerCase())}
           disabled={searchedWord === ""}
         >
           <SearchIcon />
@@ -79,7 +83,9 @@ export default function WordDefinitionPage(): ReactElement {
   }
 
   if (!loading || wordDefinition.word !== "") {
-    return <WordDefinitionDisplay WordDefinition={wordDefinition} RefreshSearch={RefreshSearch} />;
+    return (
+      <WordDefinitionDisplay WordDefinition={wordDefinition} SearchWord={searchSpecificWord} RefreshSearch={RefreshSearch} />
+    );
   }
 
   return <></>;
