@@ -35,7 +35,7 @@ export default function WordDefinitionLoader(): ReactElement {
             </div>
           </div>
         </div>
-        <div className="w-full max-sm:w-full bg-zinc-300 dark:bg-zinc-800 p-4 max-sm:p-3 rounded-3xl shadow-xl">
+        <div className="w-full max-sm:w-full bg-zinc-300 dark:bg-zinc-800 p-5 max-sm:p-3 rounded-3xl shadow-xl">
           <div className="w-[12rem] h-[3.1rem] max-sm:w-[8rem] max-sm:h-[2rem] bg-zinc-400 dark:bg-zinc-700 rounded-xl max-sm:rounded-lg shadow-lg dark:shadow-2xl text-[1.8rem] max-sm:text-[1.2rem] font-bold"></div>
           <div>
             <div className="mt-5 max-sm:mt-3">
