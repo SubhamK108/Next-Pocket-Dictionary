@@ -1,6 +1,6 @@
 # Next Pocket Dictionary
 
-> This was initially created for teaching & demonstrating the features of [NextJS](https://nextjs.org/).
+> This was initially created for teaching & demonstrating the features of [NextJS](https://nextjs.org/) and [TailwindCSS](https://tailwindcss.com/).
 
 ## Features
 
