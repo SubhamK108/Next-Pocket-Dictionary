@@ -13,6 +13,39 @@ export const viewport: Viewport = {
   ]
 };
 
+export const metadata: Metadata = {
+  title: "Pocket Dictionary",
+  description: "A simple Dictionary app.",
+  icons: {
+    shortcut: "/favicon.ico",
+    apple: {
+      url: "/apple-touch-icon.png",
+      sizes: "180x180"
+    },
+    icon: [
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" }
+    ]
+  },
+  manifest: "/manifest.json",
+  twitter: {
+    card: "summary",
+    site: "https://next-dictionary.subhamk.com",
+    title: "Pocket Dictionary",
+    description: "A simple Dictionary app.",
+    images: [{ url: "https://next-dictionary.subhamk.com/android-chrome-192x192.png" }],
+    creator: "@SubhamK108"
+  },
+  openGraph: {
+    type: "website",
+    title: "Pocket Dictionary",
+    description: "A simple Dictionary app.",
+    siteName: "Pocket Dictionary",
+    url: "https://next-dictionary.subhamk.com",
+    images: [{ url: "https://next-dictionary.subhamk.com/android-chrome-192x192.png" }]
+  }
+};
+
 export default function RootLayout({
   children
 }: Readonly<{
