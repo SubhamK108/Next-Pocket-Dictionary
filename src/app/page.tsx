@@ -47,8 +47,8 @@ export default function WordDefinitionPage(): ReactElement {
 
   if (!loading && wordDefinition.word === "") {
     return (
-      <div className="h-screen flex flex-col justify-center items-center text-center">
-        <p className="mt-40 max-sm:mt-28 text-8xl max-sm:text-5xl tracking-widest font-sans font-bold drop-shadow-lg dark:drop-shadow-2xl">
+      <div className="h-full flex flex-col justify-center items-center text-center">
+        <p className="mt-52 max-sm:mt-44 text-8xl max-sm:text-5xl tracking-widest font-sans font-bold drop-shadow-lg dark:drop-shadow-2xl">
           Pocket Dictionary
         </p>
         <input
