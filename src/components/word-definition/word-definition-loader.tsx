@@ -19,16 +19,16 @@ export default function WordDefinitionLoader(): ReactElement {
           </div>
         </div>
       </div>
-      <div className="mb-10 max-sm:mb-10 w-3/5 mx-auto max-2xl:w-4/5 max-sm:w-[85%] flex flex-col justify-start items-start text-left gap-5 max-sm:gap-4">
+      <div className="mb-10 max-sm:mb-10 w-3/5 mx-auto max-2xl:w-4/5 max-sm:w-[90%] flex flex-col justify-start items-start text-left gap-5 max-sm:gap-4">
         <div className="w-full max-sm:w-full bg-zinc-300 dark:bg-zinc-800 p-5 max-sm:p-3 rounded-3xl shadow-xl">
           <div className="w-[12rem] h-[3.1rem] max-sm:w-[8rem] max-sm:h-[2rem] bg-zinc-400 dark:bg-zinc-700 rounded-xl max-sm:rounded-lg shadow-lg dark:shadow-2xl text-[1.8rem] max-sm:text-[1.2rem] font-bold"></div>
           <div>
             <div className="mt-5 max-sm:mt-3">
-              <div className="w-full h-[2.4rem] max-sm:w-[20rem] max-sm:h-[1.7rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl text-[1.65rem] max-sm:text-[1.15rem]"></div>
+              <div className="w-full h-[2.4rem] max-sm:w-full max-sm:h-[1.7rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl text-[1.65rem] max-sm:text-[1.15rem]"></div>
               <div className="mt-2 max-sm:mt-1 w-[33rem] h-[2.1rem] max-sm:w-[15rem] max-sm:h-[1.4rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl ml-9 max-sm:ml-6 text-[1.5rem] max-sm:text-[1.1rem] italic"></div>
             </div>
             <div className="mt-5 max-sm:mt-3">
-              <div className="w-11/12 h-[2.4rem] max-sm:w-[20rem] max-sm:h-[1.7rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl text-[1.65rem] max-sm:text-[1.15rem]"></div>
+              <div className="w-11/12 h-[2.4rem] max-sm:w-full max-sm:h-[1.7rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl text-[1.65rem] max-sm:text-[1.15rem]"></div>
             </div>
             <div className="ml-1 mt-5 max-sm:mt-3">
               <div className="w-[20rem] h-[1.8rem] max-sm:w-[7rem] max-sm:h-[1.15rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl text-[1.4rem] max-sm:text-[1.05rem]"></div>
@@ -39,10 +39,10 @@ export default function WordDefinitionLoader(): ReactElement {
           <div className="w-[12rem] h-[3.1rem] max-sm:w-[8rem] max-sm:h-[2rem] bg-zinc-400 dark:bg-zinc-700 rounded-xl max-sm:rounded-lg shadow-lg dark:shadow-2xl text-[1.8rem] max-sm:text-[1.2rem] font-bold"></div>
           <div>
             <div className="mt-5 max-sm:mt-3">
-              <div className="w-full h-[2.4rem] max-sm:w-[20rem] max-sm:h-[1.7rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl text-[1.65rem] max-sm:text-[1.15rem]"></div>
+              <div className="w-full h-[2.4rem] max-sm:w-full max-sm:h-[1.7rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl text-[1.65rem] max-sm:text-[1.15rem]"></div>
             </div>
             <div className="mt-5 max-sm:mt-3">
-              <div className="w-10/12 h-[2.4rem] max-sm:w-[20rem] max-sm:h-[1.7rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl text-[1.65rem] max-sm:text-[1.15rem]"></div>
+              <div className="w-10/12 h-[2.4rem] max-sm:w-full max-sm:h-[1.7rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl text-[1.65rem] max-sm:text-[1.15rem]"></div>
             </div>
             <div className="ml-1 mt-5 max-sm:mt-3">
               <div className="w-[20rem] h-[1.8rem] max-sm:w-[7rem] max-sm:h-[1.15rem] bg-zinc-400 dark:bg-zinc-700 rounded-lg max-sm:rounded-md shadow-lg dark:shadow-2xl text-[1.4rem] max-sm:text-[1.05rem]"></div>
