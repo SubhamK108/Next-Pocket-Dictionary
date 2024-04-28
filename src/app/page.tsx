@@ -83,7 +83,7 @@ export default function WordDefinitionPage(): ReactElement {
     return <WordDefinitionLoader />;
   }
 
-  if (!loading || wordDefinition.word !== "") {
+  if (!loading && wordDefinition.word !== "") {
     return (
       <WordDefinitionDisplay WordDefinition={wordDefinition} SearchWord={searchSpecificWord} RefreshSearch={RefreshSearch} />
     );
