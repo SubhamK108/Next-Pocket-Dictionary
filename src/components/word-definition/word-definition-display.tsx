@@ -54,7 +54,7 @@ export default function WordDefinitionDisplay({
           </div>
         </div>
       </div>
-      <div className="mb-10 max-sm:mb-10 w-2/5 mx-auto max-sm:w-[22rem] flex flex-col justify-start items-start text-left gap-5 max-sm:gap-4">
+      <div className="mb-10 max-sm:mb-10 w-3/5 mx-auto max-2xl:w-4/5 max-sm:w-[85%] flex flex-col justify-start items-start text-left gap-5 max-sm:gap-4">
         {WordDefinition.meanings.map((meaning: Meaning, index: number) => (
           <div key={index} className="bg-zinc-300 dark:bg-zinc-800 p-5 max-sm:p-3 rounded-3xl shadow-xl">
             <p className="text-[1.8rem] max-sm:text-[1.2rem] font-bold drop-shadow-lg dark:drop-shadow-2xl">
@@ -70,9 +70,9 @@ export default function WordDefinitionDisplay({
                 </div>
               ))}
               {(meaning.synonyms.length !== 0 || meaning.antonyms.length !== 0) && (
-                <div className="ml-1 mt-5 max-sm:mt-3">
+                <div className="ml-1">
                   {meaning.synonyms.length !== 0 && (
-                    <p className="text-[1.4rem] max-sm:text-[1.05rem] flex justify-start items-center gap-2 flex-wrap">
+                    <p className="mt-5 max-sm:mt-3 text-[1.4rem] max-sm:text-[1.05rem] flex justify-start items-center gap-2 flex-wrap">
                       {`Similar:`}
                       {meaning.synonyms.map((synonym: string, index3: number) => (
                         <span
@@ -87,7 +87,7 @@ export default function WordDefinitionDisplay({
                     </p>
                   )}
                   {meaning.antonyms.length !== 0 && (
-                    <p className="text-[1.4rem] max-sm:text-[1.05rem] flex justify-start items-center gap-2 flex-wrap">
+                    <p className="mt-5 max-sm:mt-3 text-[1.4rem] max-sm:text-[1.05rem] flex justify-start items-center gap-2 flex-wrap">
                       {`Opposite: `}
                       {meaning.antonyms.map((antonym: string, index3: number) => (
                         <span

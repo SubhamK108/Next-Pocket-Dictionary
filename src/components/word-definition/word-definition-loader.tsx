@@ -19,7 +19,7 @@ export default function WordDefinitionLoader(): ReactElement {
           </div>
         </div>
       </div>
-      <div className="mb-10 max-sm:mb-10 w-2/5 mx-auto max-sm:w-[22rem] flex flex-col justify-start items-start text-left gap-5 max-sm:gap-4">
+      <div className="mb-10 max-sm:mb-10 w-3/5 mx-auto max-2xl:w-4/5 max-sm:w-[85%] flex flex-col justify-start items-start text-left gap-5 max-sm:gap-4">
         <div className="w-full max-sm:w-full bg-zinc-300 dark:bg-zinc-800 p-5 max-sm:p-3 rounded-3xl shadow-xl">
           <div className="w-[12rem] h-[3.1rem] max-sm:w-[8rem] max-sm:h-[2rem] bg-zinc-400 dark:bg-zinc-700 rounded-xl max-sm:rounded-lg shadow-lg dark:shadow-2xl text-[1.8rem] max-sm:text-[1.2rem] font-bold"></div>
           <div>
