@@ -58,7 +58,7 @@ export default function WordDefinitionPage(): ReactElement {
           value={searchedWord}
           onInput={(e) => setSearchedWord(e.currentTarget.value)}
           onKeyDown={(e) => {
-            if (e.code === "Enter" && searchedWord !== "") {
+            if ((e.key === "Enter" || e.key === "Go") && searchedWord !== "") {
               getWordDefinition(searchedWord.toLowerCase());
             }
           }}
