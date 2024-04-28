@@ -24,7 +24,7 @@ export default function WordDefinitionPage(): ReactElement {
       setWordDefinition({ ...EmptyWordDefinition });
       setSearchedWord("");
       setErrorText(
-        `Either '${searchedWord}' isn't there in this dictionary or there's a technical problem. You can try again or use the internet for this word.`
+        `Either '${word}' isn't there in this dictionary or there's a technical problem. You can try again or use the internet for this word.`
       );
       setIsError(true);
     }
@@ -40,6 +40,7 @@ export default function WordDefinitionPage(): ReactElement {
   }
 
   function RefreshSearch(): void {
+    setIsError(false);
     setSearchedWord("");
     setWordDefinition({ ...EmptyWordDefinition });
   }
