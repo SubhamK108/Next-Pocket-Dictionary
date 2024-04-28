@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     site: "https://next-dictionary.subhamk.com",
     title: "Pocket Dictionary",
     description: "A simple Dictionary app.",
-    images: [{ url: "https://next-dictionary.subhamk.com/android-chrome-192x192.png" }],
+    images: [{ url: "https://next-dictionary.subhamk.com/android-chrome-512x512.png" }],
     creator: "@SubhamK108"
   },
   openGraph: {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: "A simple Dictionary app.",
     siteName: "Pocket Dictionary",
     url: "https://next-dictionary.subhamk.com",
-    images: [{ url: "https://next-dictionary.subhamk.com/android-chrome-192x192.png" }]
+    images: [{ url: "https://next-dictionary.subhamk.com/android-chrome-512x512.png" }]
   }
 };
 
