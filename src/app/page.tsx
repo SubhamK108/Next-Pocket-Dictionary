@@ -1,6 +1,6 @@
 "use client";
 
-import { fetchWordDefinition } from "@/components/api/word-definition-api";
+import { ResponseResult, fetchWordDefinition } from "@/components/api/word-definition-api";
 import { SearchIcon } from "@/components/shared/icons";
 import WordDefinitionDisplay from "@/components/word-definition/word-definition-display";
 import WordDefinitionError from "@/components/word-definition/word-definition-error";
@@ -17,15 +17,21 @@ export default function WordDefinitionPage(): ReactElement {
 
   async function getWordDefinition(word: string): Promise<void> {
     setLoading(true);
-    const data: WordDefinition = await fetchWordDefinition(word);
-    if (data.word !== "") {
+    const [data, responseResult]: [WordDefinition, ResponseResult] = await fetchWordDefinition(word);
+    if (responseResult === "SUCCESS") {
       setWordDefinition(data);
     } else {
       setWordDefinition({ ...EmptyWordDefinition });
       setSearchedWord("");
-      setErrorText(
-        `Either '${word}' isn't there in this dictionary or there's a technical problem. You can try again or use the internet for this word.`
-      );
+      if (responseResult === "NOT_FOUND") {
+        setErrorText(
+          `Oops! '${word}' isn't there in this dictionary, you have to use the internet for this word. Sorry. 😞`
+        );
+      } else {
+        setErrorText(
+          "The Server is facing some problems right now, please try again a bit later, or use the internet for this word. Sorry. 😞"
+        );
+      }
       setIsError(true);
     }
     setLoading(false);
@@ -36,7 +42,7 @@ export default function WordDefinitionPage(): ReactElement {
   }
 
   function searchSpecificWord(word: string): void {
-    getWordDefinition(word.toLowerCase());
+    getWordDefinition(word);
   }
 
   function RefreshSearch(): void {
@@ -59,7 +65,7 @@ export default function WordDefinitionPage(): ReactElement {
           onInput={(e) => setSearchedWord(e.currentTarget.value)}
           onKeyDown={(e) => {
             if ((e.key === "Enter" || e.key === "Go") && searchedWord !== "") {
-              getWordDefinition(searchedWord.toLowerCase());
+              getWordDefinition(searchedWord);
             }
           }}
           placeholder="Enter a word..."
@@ -67,7 +73,7 @@ export default function WordDefinitionPage(): ReactElement {
         <button
           className="mt-10 max-sm:mt-6 cursor-pointer disabled:cursor-default hover:text-[#26272A] dark:hover:text-white disabled:text-zinc-500 dark:disabled:text-zinc-600"
           title="Search Word"
-          onClick={() => getWordDefinition(searchedWord.toLowerCase())}
+          onClick={() => getWordDefinition(searchedWord)}
           disabled={searchedWord === ""}
         >
           <SearchIcon />
