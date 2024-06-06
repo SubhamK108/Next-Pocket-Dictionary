@@ -59,7 +59,7 @@ export default function WordDefinitionPage(): ReactElement {
         </p>
         <input
           type="text"
-          className="mt-24 max-sm:mt-12 p-5 max-sm:p-3 text-5xl max-sm:text-[1.5rem] max-sm:leading-6 border border-[#AEAEAE] rounded-3xl max-sm:rounded-2xl font-sans h-[5.5rem] max-sm:h-[3.4rem] w-[45rem] max-sm:w-[20rem] text-center focus:outline-none shadow-lg dark:shadow-2xl tracking-wider font-thin"
+          className="mt-24 max-sm:mt-12 p-5 max-sm:p-3 text-5xl max-sm:text-[1.5rem] max-sm:leading-6 border border-[#AEAEAE] rounded-3xl max-sm:rounded-2xl font-sans h-[5.5rem] max-sm:h-[3.4rem] w-[45rem] max-sm:w-[20rem] text-center focus:outline-none shadow-lg dark:shadow-2xl tracking-widest"
           autoFocus={true}
           value={searchedWord}
           onInput={(e) => setSearchedWord(e.currentTarget.value)}
@@ -78,8 +78,29 @@ export default function WordDefinitionPage(): ReactElement {
         >
           <SearchIcon />
         </button>
-        <div className="mt-24 max-sm:mt-12 h-[12rem] w-[45%] max-sm:h-[11.5rem] max-sm:w-[20rem] flex justify-center items-start">
+        <div className="mt-24 max-sm:mt-12 h-[10rem] w-[45%] max-sm:h-[10rem] max-sm:w-[20rem] flex justify-center items-start">
           {isError && <WordDefinitionError ErrorText={errorText} CloseError={CloseError} />}
+        </div>
+        <div className="text-center mb-1">
+          <p className="px-12 max-sm:text-[0.9rem] font-sans">
+            Made with ❤️ by
+            <a 
+              href="https://www.subhamk.com/" 
+              target="_blank"
+              className="underline hover:text-[#26272A] dark:hover:text-white"
+            >
+              Subham K.
+            </a>
+            <br></br>
+            With the help of 
+            <a 
+              href="https://github.com/meetDeveloper/freeDictionaryAPI" 
+              target="_blank"
+              className="underline hover:text-[#26272A] dark:hover:text-white"
+            >
+              Free Dictionary API
+            </a>
+          </p>
         </div>
       </div>
     );
