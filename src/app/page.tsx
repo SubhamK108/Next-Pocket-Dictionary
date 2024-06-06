@@ -83,7 +83,7 @@ export default function WordDefinitionPage(): ReactElement {
         </div>
         <div className="text-center mb-1">
           <p className="px-12 max-sm:text-[0.9rem] font-sans">
-            Made with ❤️ by
+            {"Made with ❤️ by "}
             <a 
               href="https://www.subhamk.com/" 
               target="_blank"
@@ -92,7 +92,7 @@ export default function WordDefinitionPage(): ReactElement {
               Subham K.
             </a>
             <br></br>
-            With the help of 
+            {"With the help of "}
             <a 
               href="https://github.com/meetDeveloper/freeDictionaryAPI" 
               target="_blank"
